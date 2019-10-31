@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495879487616662091}
-  m_LocalRotation: {x: -0.09070531, y: 0.16099316, z: -0.06591664, w: 0.98056555}
+  m_LocalRotation: {x: -0.090704866, y: 0.16099238, z: -0.065921254, w: 0.9805654}
   m_LocalPosition: {x: 0.32, y: 0.47, z: -3.56}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
@@ -127,6 +127,14 @@ MonoBehaviour:
   forwardForce: 1500
   sidewardForce: 25
   jumpImpulse: 1
+  useBoost: 0
+  boostActive: 0
+  boostAcivationThreshold: 10
+  boostRecharge: 1.5
+  boostConsume: 10
+  boostForce: 20
+  boostReserve: 0
+  boostReserveMax: 100
 --- !u!114 &495879487616662082
 MonoBehaviour:
   m_ObjectHideFlags: 0

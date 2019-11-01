@@ -2,11 +2,13 @@
 
 public class FollowPlayer : MonoBehaviour
 {
-  public UnityEngine.Transform player;
+  public UnityEngine.Transform playerTransform;
+  public UnityEngine.Rigidbody playerRb;
   public Vector3 offset;
 
   void Update()
   {
-    transform.position = player.position + offset;
+    float zoom = 1 + (playerRb.velocity.magnitude / 16f);
+    transform.position = playerTransform.position + offset * zoom;
   }
 }

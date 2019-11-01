@@ -12,14 +12,17 @@ public class PlayerCollision : MonoBehaviour
         Vector3 exPosition = transform.position;
         // Vector3 exPosition = other.transform.position;
 
-        GameObject explosion  = Instantiate(explosionPrefab, exPosition, Quaternion.identity);
+        GameObject explosion = Instantiate(explosionPrefab, exPosition, Quaternion.identity);
         // explosion.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
 
         GetComponent<AudioSource>().Play();
 
-        GameObject fuse = transform.GetChild(0).gameObject;
-        if ( fuse != null ) {
+        try {
+          Transform fuseTransform = transform.GetChild(0);
+          GameObject fuse = fuseTransform.gameObject;
           Destroy(fuse);
+        } catch (System.Exception) {
+          Debug.Log("No fuse found.");
         }
 
         controller.enabled = false;

@@ -17,6 +17,12 @@ public class LevelComplete : MonoBehaviour
         // Get name of current scene and next scene
         string sceneName = SceneManager.GetActiveScene ().name;
 
+        if (sceneName == "LevelTW03")
+        {
+          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+          return;
+        }
+
         // See bug: https://issuetracker.unity3d.com/issues/scenemanager-dot-getscenebybuildindex-dot-name-returns-an-empty-string-if-scene-is-not-loaded
         // string nextSceneName = SceneManager.GetSceneByBuildIndex (nextLevelBuildIndex).name;
         string nextScenePath = SceneUtility.GetScenePathByBuildIndex( nextLevelBuildIndex );
@@ -24,6 +30,8 @@ public class LevelComplete : MonoBehaviour
 
         Debug.Log("sceneName: " + sceneName);
         Debug.Log("nextSceneName: " + nextSceneName);
+
+
 
         if (sceneName.Length > 7 && nextSceneName.Length > 7) {
             // Check if name tag of scenes is equal

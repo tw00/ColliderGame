@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float sidewardForce = 300f;
     public float jumpImpulse = 10f;
     private float distToGround;
+    public float offsetGrounded = 0.1f;
 
     public bool useBoost = false;
     public bool boostActive = false;
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Recharge boost
-        if (boostReserve <= boostReserveMax) { 
+        if (boostReserve <= boostReserveMax) {
             boostReserve += boostRecharge * Time.deltaTime;
         }
 
@@ -69,6 +70,6 @@ public class PlayerController : MonoBehaviour
     }
 
     bool IsGrounded() {
-        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+        return Physics.Raycast(transform.position, -Vector3.up, distToGround + offsetGrounded);
     }
 }

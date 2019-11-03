@@ -23,10 +23,10 @@ public class Menu : MonoBehaviour
 
     public void ToggleFullscreen(Button btnPressed) {
       Screen.fullScreen = !Screen.fullScreen;
-      if ( true ) {
-        Screen.fullScreenMode = FullScreenMode.Windowed;
-      } else {
+      if ( Screen.fullScreen ) {
         Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+      } else {
+        Screen.fullScreenMode = FullScreenMode.Windowed;
       }
 
       // Text text = btnPressed.GetComponentInChildren<Text>() as Text;

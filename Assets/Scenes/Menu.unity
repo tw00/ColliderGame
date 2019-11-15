@@ -543,7 +543,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Start SC Episodes
 
-    (1 level)'
+    (2 levels)'
 --- !u!222 &1074770064
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -49,8 +49,9 @@ public class PlayerController : MonoBehaviour
             boostReserve -= boostConsume * Time.deltaTime;
 
             // Make sure boost reserve is never negative
-            if (boostReserve < 0f) {
+            if (boostReserve <= 0f) {
                 boostReserve = 0f;
+                boostActive = false;
             }            
         } else {
             boostActive = false;

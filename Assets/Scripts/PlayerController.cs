@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(0, 0, forwardForce * Time.deltaTime);
 
         // Steer left
-        if ( Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
             rb.AddForce(-sidewardForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
@@ -64,13 +64,13 @@ public class PlayerController : MonoBehaviour
 
         // Jump
         if (Input.GetKey (KeyCode.Space)) {
-            if ( IsGrounded() ) {
+            if (IsGrounded()) {
                 rb.AddForce(0, jumpImpulse, 0, ForceMode.Impulse);
             }
         }
 
         // "Die"
-        if ( rb.position.y < -3f ) {
+        if (rb.position.y < -3f) {
             FindObjectOfType<GameManager>().EndGame();
         }
     }

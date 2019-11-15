@@ -41,12 +41,17 @@ public class PlayerController : MonoBehaviour
         }
 
         // Boost
-        if (useBoost && (Input.GetKey ("w") || Input.GetKey (KeyCode.UpArrow)) && (boostReserve > boostAcivationThreshold || boostActive)) {
+        if (useBoost && boostReserve > 0f && (Input.GetKey ("w") || Input.GetKey (KeyCode.UpArrow)) && (boostReserve > boostAcivationThreshold || boostActive)) {
             boostActive = true;
+            rb.AddForce (0, 0, boostForce * Time.deltaTime, ForceMode.VelocityChange);
 
             // Reduce boost on usage
             boostReserve -= boostConsume * Time.deltaTime;
-            rb.AddForce (0, 0, boostForce * Time.deltaTime, ForceMode.VelocityChange);
+
+            // Make sure boost reserve is never negative
+            if (boostReserve < 0f) {
+                boostReserve = 0f;
+            }            
         } else {
             boostActive = false;
         }

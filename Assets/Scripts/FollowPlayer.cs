@@ -10,5 +10,7 @@ public class FollowPlayer : MonoBehaviour
   {
     float zoom = 1 + (playerRb.velocity.magnitude / 16f);
     transform.position = playerTransform.position + offset * zoom;
+    transform.RotateAround(
+      Vector3.zero, Vector3.up, 20 * Time.deltaTime);
   }
 }

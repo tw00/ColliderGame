@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 191232139943220975}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,6 +134,7 @@ MonoBehaviour:
   forwardForce: 1500
   sidewardForce: 25
   jumpImpulse: 1
+  offsetGrounded: 0.1
   useBoost: 0
   boostActive: 0
   boostAcivationThreshold: 10
